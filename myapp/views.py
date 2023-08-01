@@ -1,5 +1,8 @@
 from django.http import JsonResponse
 from django.shortcuts import render
+from .models import Story
+
+# story_list function removed from here
 
 def change_text(request):
     if request.is_ajax():
@@ -19,4 +22,5 @@ def change_text(request):
         return JsonResponse({'story': story, 'new_image_url': new_image_url})
 
 def index(request):
-    return render(request, 'index.html')
+    stories = Story.objects.all()
+    return render(request, 'index.html', {'stories': stories})
