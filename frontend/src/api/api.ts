@@ -1,15 +1,12 @@
 import axios from 'axios';
+import { StoryData } from '../types/types';  // パスが正しいか確認してください。
 
 const API_URL = 'http://localhost:8000/';
 
-export type StoryData = {
-  title: string;
-  content: string;
-  background_image: string;
-  choices: string[];
-}
-
-export async function fetchSomeData(): Promise<StoryData> {
-  const response = await axios.get(`${API_URL}story/1/`); 
+export const fetchSomeData = async (sceneId: number): Promise<StoryData> => {
+  const response = await axios.get<StoryData>(`${API_URL}story/${sceneId}/`);
   return response.data;
 }
+
+// 'export type' を使用して、型を再エクスポートします。
+export type { StoryData };

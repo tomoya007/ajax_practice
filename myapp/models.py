@@ -21,6 +21,7 @@ class Character(models.Model):
 class Choice(models.Model):
     story = models.ForeignKey(Story, on_delete=models.CASCADE)
     choice_text = models.TextField()
+    next_story_id = models.IntegerField(null=True)
 
     def __str__(self):
         return self.choice_text
