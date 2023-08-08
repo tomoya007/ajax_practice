@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { StoryData } from '../types/types';  // パスが正しいか確認してください。
+import { StoryData } from '../types/types';
 
 const API_URL = 'http://localhost:8000/';
 

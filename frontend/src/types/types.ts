@@ -1,4 +1,5 @@
 export interface StoryData {
+  id: number; // これを追加
   title: string;
   content: string;
   background_image: string;

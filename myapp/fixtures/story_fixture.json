@@ -1,0 +1,38 @@
+[
+  {
+      "model": "myapp.character",
+      "pk": 1,
+      "fields": {
+          "name": "バジル",
+          "description": "先輩冒険者",
+          "image": null
+      }
+  },
+  {
+      "model": "myapp.character",
+      "pk": 2,
+      "fields": {
+          "name": "ヘンリー",
+          "description": "先輩冒険者",
+          "image": null
+      }
+  },
+  {
+      "model": "myapp.character",
+      "pk": 3,
+      "fields": {
+          "name": "シヴィル",
+          "description": "先輩冒険者",
+          "image": null
+      }
+  },
+  {
+      "model": "myapp.story",
+      "pk": 1,
+      "fields": {
+          "title": "酒場の冒険者たち",
+          "content": "新人冒険者である君は、酒場で三人の先輩冒険者と意気投合し、酒を飲みかわすことになった。\n\nバジル：「王都の周りには危険な場所が多いから気をつけろ。よし、怪談大会しよう。俺たちが一人ずつ、今までの冒険で怖かった出来事を話すんだ」\nヘンリー「いいですね」\nシヴィル：「さっさと始めようぜ。誰から聞きたい？」\nシヴィルは君に問いかけた。",
+          "background_image": null
+      }
+  }
+]

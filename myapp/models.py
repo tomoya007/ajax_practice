@@ -4,7 +4,7 @@ from django.db import models
 class Story(models.Model):
     title = models.CharField(max_length=255)
     content = models.TextField()
-    background_image = models.CharField(max_length=255)
+    background_image = models.ImageField(upload_to='story_backgrounds/')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -13,15 +13,15 @@ class Story(models.Model):
 class Character(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.CharField(max_length=255)
-
+    image = models.ImageField(upload_to='characters/')
+    
     def __str__(self):
         return self.name
 
 class Choice(models.Model):
-    story = models.ForeignKey(Story, on_delete=models.CASCADE)
+    story = models.ForeignKey(Story, on_delete=models.CASCADE, related_name="main_choices")
     choice_text = models.TextField()
-    next_story_id = models.IntegerField(null=True)
+    next_story = models.ForeignKey('Story', null=True, blank=True, on_delete=models.SET_NULL, related_name="next_choices")
 
     def __str__(self):
         return self.choice_text
